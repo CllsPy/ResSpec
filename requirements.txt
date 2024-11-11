@@ -1,5 +1,4 @@
 pillow
 torch
-pytorch
 streamlit
 torchvision
