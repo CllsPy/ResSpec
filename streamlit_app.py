@@ -16,5 +16,5 @@ preprocess = transforms.Compose([
         )])
 
 from PIL import Image
-img = Image.open('https://github.com/CllsPy/imgClassifier/blob/master/snake.jpg)
+img = Image.open('snake.jpg')
 img
