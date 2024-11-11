@@ -1,6 +1,6 @@
 import torch
 import streamlit as st
-
+from PIL import Image
 from torchvision import models
 from torchvision import transforms
 
@@ -14,6 +14,15 @@ preprocess = transforms.Compose([
             mean=[0.485, 0.456, 0.406],
             std=[0.229, 0.224, 0.225])])
 
-from PIL import Image
 img = Image.open('snake.jpg')
-img
+
+img_t = preprocess(img)
+batch_t = torch.unsqueeze(img_t, 0)
+
+with open('imagenet_classes.txt') as f:
+    labels = [line.strip() for line in f.readlines()]
+
+_, index = torch.max(out, 1)
+
+percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
+st.markdown(labels[index[0]], percentage[index[0]].item())
