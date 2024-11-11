@@ -40,32 +40,32 @@ with st.sidebar:
         # data = pd.DataFrame(dic, index=[0])
         # data
 
-        percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
+percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
 
-        _, indices = torch.sort(out, descending=True)
-        # [(labels[idx], percentage[idx].item()) for idx in indices[0][:5]]
+_, indices = torch.sort(out, descending=True)
+# [(labels[idx], percentage[idx].item()) for idx in indices[0][:5]]
 
 
-        # Sorting the output and getting the top 5 indices
-        _, indices = torch.sort(out, descending=True)
-        
-        # If indices is 2D, we need to flatten it or select the correct part
-        indices = indices.squeeze()  # Remove any extra dimensions (e.g., if indices is 2D)
-        
-        # Select only the top 5 indices (as 1D tensor)
-        indices = indices[:5]
-        
-        # Getting the top 5 labels and percentages
-        top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
-        top_percentages = [percentage[idx].item() for idx in indices]
-        
-        # Plotting with matplotlib
-        fig, ax = plt.subplots()
-        ax.barh(top_labels, top_percentages, color='skyblue')
-        ax.set_xlabel('Percentage')
-        ax.set_title('Top 5 Predictions')
-        
-        # Display the plot in Streamlit
-        st.pyplot(fig)
+# Sorting the output and getting the top 5 indices
+_, indices = torch.sort(out, descending=True)
+
+# If indices is 2D, we need to flatten it or select the correct part
+indices = indices.squeeze()  # Remove any extra dimensions (e.g., if indices is 2D)
+
+# Select only the top 5 indices (as 1D tensor)
+indices = indices[:5]
+
+# Getting the top 5 labels and percentages
+top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
+top_percentages = [percentage[idx].item() for idx in indices]
+
+# Plotting with matplotlib
+fig, ax = plt.subplots()
+ax.barh(top_labels, top_percentages, color='skyblue')
+ax.set_xlabel('Percentage')
+ax.set_title('Top 5 Predictions')
+
+# Display the plot in Streamlit
+st.pyplot(fig)
 
 
