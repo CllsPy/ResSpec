@@ -4,6 +4,7 @@ from PIL import Image
 from torchvision import models
 from torchvision import transforms
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 resnet = models.resnet101(pretrained=True)
