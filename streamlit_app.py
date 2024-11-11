@@ -17,20 +17,20 @@ preprocess = transforms.Compose([
             mean=[0.485, 0.456, 0.406],
             std=[0.229, 0.224, 0.225])])
 
-
-img = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
-if img is not None:
-        img = Image.open(img)
-        st.image(img, caption="Uploaded Image.", use_column_width=True)
-        
-        img_t = preprocess(img)
-        batch_t = torch.unsqueeze(img_t, 0)
-        
-        resnet.eval()
-        out = resnet(batch_t)
-        
-        with open('imagenet_classes.txt') as f:
-                labels = [line.strip() for line in f.readlines()]
+with st.sidebar('upload'):
+        img = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
+        if img is not None:
+                img = Image.open(img)
+                st.image(img, caption="Uploaded Image.", use_column_width=True)
+                
+                img_t = preprocess(img)
+                batch_t = torch.unsqueeze(img_t, 0)
+                
+                resnet.eval()
+                out = resnet(batch_t)
+                
+                with open('imagenet_classes.txt') as f:
+                        labels = [line.strip() for line in f.readlines()]
         
         #_, index = torch.max(out, 1)
         
