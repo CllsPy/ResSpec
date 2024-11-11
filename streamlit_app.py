@@ -34,7 +34,7 @@ if img is not None:
         
         percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
         answer = {labels[index[0]], percentage[index[0]].item()}
-        pct = (percentage[index[0]].item())
+        sts = (percentage[index[0]].item())
         pr0 = st.progress(0)
-        pr0.progress(pct)
+        pr0.progress(sts)
 
