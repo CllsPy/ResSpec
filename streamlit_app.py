@@ -38,6 +38,7 @@ if img is not None:
         dic = {'label': labels[index[0]], '%': percentage[index[0]].item()}
         data = pd.DataFrame(dic, index=[0])
         data
+       
         
   
 
