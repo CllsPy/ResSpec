@@ -15,11 +15,11 @@ preprocess = transforms.Compose([
             std=[0.229, 0.224, 0.225])])
 
 
-img = st.file_uploader(
-    "Choose a CSV file", accept_multiple_files=True
-)
-img = img.covert()
+img = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
 if img is not None:
+        img = Image.open(img)
+        st.image(img, caption="Uploaded Image.", use_column_width=True)
+        
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
         
