@@ -3,6 +3,7 @@ import streamlit as st
 from PIL import Image
 from torchvision import models
 from torchvision import transforms
+import pandas as pd
 
 resnet = models.resnet101(pretrained=True)
 
@@ -32,4 +33,5 @@ if img is not None:
         _, index = torch.max(out, 1)
         
         percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
-        st.markdown(f'# Answer: {labels[index[0]], percentage[index[0]].item()}')
+        data = pd.DataFrame( {labels[index[0]], percentage[index[0]].item()}, index=[0])
+        data
