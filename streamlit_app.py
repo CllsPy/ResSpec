@@ -35,6 +35,7 @@ if img is not None:
         percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
         answer = {labels[index[0]], percentage[index[0]].item()}
         sts = (percentage[index[0]].item())
-        pr0 = st.progress(0)
-        pr0.progress(sts)
+        val = st.slider('Percentage Input',min_value=0, max_value=sts)  
+        val
+
 
