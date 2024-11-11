@@ -18,7 +18,7 @@ preprocess = transforms.Compose([
 img = st.file_uploader(
     "Choose a CSV file", accept_multiple_files=True
 )
-img = img.fromarray(img)
+img = PIL.open(img)
 if img is not None:
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
