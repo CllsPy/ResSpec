@@ -23,9 +23,9 @@ resnet.eval()
 out = resnet(batch_t)
 
 with open('imagenet_classes.txt') as f:
-    labels = [line.strip() for line in f.readlines()]
+        labels = [line.strip() for line in f.readlines()]
 
 _, index = torch.max(out, 1)
 
 percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
-st.markdown(labels[index[0]], percentage[index[0]].item())
+labels[index[0]], percentage[index[0]].item()
