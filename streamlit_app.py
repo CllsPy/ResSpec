@@ -18,6 +18,8 @@ img = Image.open('snake.jpg')
 
 img_t = preprocess(img)
 batch_t = torch.unsqueeze(img_t, 0)
+
+resnet.eval()
 out = resnet(batch_t)
 
 with open('imagenet_classes.txt') as f:
