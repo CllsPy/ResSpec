@@ -4,7 +4,6 @@ from PIL import Image
 from torchvision import models
 from torchvision import transforms
 import pandas as pd
-from st_radial import st_radial
 
 
 resnet = models.resnet101(pretrained=True)
@@ -38,7 +37,8 @@ if img is not None:
         answer = {labels[index[0]], percentage[index[0]].item()}
         sts = (percentage[index[0]].item())
         val = st.slider('Percentage',min_value=0.0, max_value=sts)  
-        st_radial('Value',val)  
+        st.code(val, language="markdown")
+
 
 
 
