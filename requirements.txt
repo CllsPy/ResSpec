@@ -2,3 +2,5 @@ pillow
 torch
 streamlit
 torchvision
+matplotlib
+
