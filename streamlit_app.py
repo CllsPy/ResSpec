@@ -43,7 +43,7 @@ if img is not None:
         percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
 
         _, indices = torch.sort(out, descending=True)
-        [(labels[idx], percentage[idx].item()) for idx in indices[0][:5]]
+        # [(labels[idx], percentage[idx].item()) for idx in indices[0][:5]]
 
 
         # Sorting the output and getting the top 5 indices
