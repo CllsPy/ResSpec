@@ -17,7 +17,7 @@ preprocess = transforms.Compose([
             mean=[0.485, 0.456, 0.406],
             std=[0.229, 0.224, 0.225])])
 
-with st.sidebar('upload'):
+with st.sidebar:
         img = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
         if img is not None:
                 img = Image.open(img)
