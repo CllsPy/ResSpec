@@ -39,7 +39,8 @@ if img is not None:
         # data = pd.DataFrame(dic, index=[0])
         # data
 
-        
+        percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
+
         _, indices = torch.sort(out, descending=True)
         [(labels[idx], percentage[idx].item()) for idx in indices[0][:5]]
   
