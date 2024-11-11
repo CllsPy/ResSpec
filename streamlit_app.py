@@ -48,8 +48,11 @@ if img is not None:
         # Sorting the output and getting the top 5 indices
         _, indices = torch.sort(out, descending=True)
         
-        # Make sure indices is a 1D tensor (indices[0] assumes out is 2D)
-        indices = indices[:5]  # Select only the top 5 indices
+        # If indices is 2D, we need to flatten it or select the correct part
+        indices = indices.squeeze()  # Remove any extra dimensions (e.g., if indices is 2D)
+        
+        # Select only the top 5 indices (as 1D tensor)
+        indices = indices[:5]
         
         # Getting the top 5 labels and percentages
         top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
@@ -63,6 +66,5 @@ if img is not None:
         
         # Display the plot in Streamlit
         st.pyplot(fig)
-
 
 
