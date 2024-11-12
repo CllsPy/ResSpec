@@ -67,6 +67,6 @@ if img is not None:
         with st.container(height=300):
                 right.markdown("## 3. Label for your image")
                 plt.grid(True)
-                left.pyplot(fig)
+                right.pyplot(fig)
 
 
