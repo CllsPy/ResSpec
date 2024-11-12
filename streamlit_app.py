@@ -32,7 +32,7 @@ with st.sidebar:
         
         ''')
 
-with st.container(height=800):
+with st.container(height=580):
         st.markdown("## 1. Upload an imagem")
         st.info('''
                                 Please upload an image of an animal (in JPG, PNG, or JPEG format) 
@@ -42,7 +42,7 @@ with st.container(height=800):
 if img is not None:
         img = Image.open(img)
 
-        with st.container(height=800):
+        with st.container(height=500):
                 st.markdown("## 2. Your Image")
 
 
@@ -77,7 +77,7 @@ if img is not None:
         ax.set_xlabel('Percentage')
         ax.set_title('Top 5 Predictions')
 
-        with st.container(height=800):
+        with st.container(height=500):
                 st.markdown("## 3. Label for your image")
                 plt.grid(True)
                 st.pyplot(fig)
