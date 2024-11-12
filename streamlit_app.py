@@ -22,14 +22,14 @@ with st.sidebar:
         st.markdown("## Objective")
         st.markdown('''This app uses a pre-trained ResNet model to classify images. 
         Upload an image, and the model predicts the top 5 possible labels along with their confidence scores, 
-        visualized in a bar chart.
-        ''')
+        visualized in a bar chart. ''')
 
          st.markdown("## Summary")
+
          st.markdown(''' 
-        - Upload an imagem of an animal
-        - See your upload
-        - Get your label
+                - Upload an imagem of an animal
+                - See your upload
+                - Get your label
         
         ''')
 
