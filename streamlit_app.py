@@ -63,7 +63,7 @@ if img is not None:
         ax.set_title('Top 5 Predictions')
         
         # Display the plot in Streamlit
-        with col2:
+        with col3:
                 with st.container(height=300):
                         st.pyplot(fig)
 
