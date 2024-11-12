@@ -25,6 +25,14 @@ with st.sidebar:
         visualized in a bar chart.
         ''')
 
+         st.markdown("## Summary")
+         st.markdown(''' 
+        - Upload an imagem of an animal
+        - See your upload
+        - Get your label
+        
+        ''')
+
 # cols
 col1, col2, col3 = st.columns(3)
 left, middle, right = st.columns(3, vertical_alignment="bottom")
