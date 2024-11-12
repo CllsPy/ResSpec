@@ -22,7 +22,7 @@ with st.sidebar:
 
 
 st.markdown("Upload an imagem")
-img = st.file_uploader(type=["jpg", "png", "jpeg"])
+img = st.file_uploader("File", type=["jpg", "png", "jpeg"])
 if img is not None:
         img = Image.open(img)
         st.image(img, caption="Uploaded Image.", use_column_width=True)
