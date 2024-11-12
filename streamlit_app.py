@@ -22,6 +22,7 @@ with st.sidebar:
         st.markdown("Title")
 
 # cols
+col1, col2, col3 = st.columns(3)
 
 with st.container(height=300):
         st.markdown("## 1. Upload an imagem")
@@ -30,9 +31,10 @@ with st.container(height=300):
 if img is not None:
         img = Image.open(img)
 
-        with st.container(height=500):
-                st.markdown("## 2. Your Image")
-                st.image(img, caption="Uploaded Image.", use_column_width=True)
+        with col2:
+                with st.container(height=500):
+                        st.markdown("## 2. Your Image")
+                        st.image(img, caption="Uploaded Image.", use_column_width=True)
         
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
@@ -61,8 +63,8 @@ if img is not None:
         ax.set_title('Top 5 Predictions')
         
         # Display the plot in Streamlit
-
-        with st.container(height=300):
-                st.pyplot(fig)
+        with col2:
+                with st.container(height=300):
+                        st.pyplot(fig)
 
 
