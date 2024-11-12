@@ -34,7 +34,7 @@ if img is not None:
 
         with st.container(height=500):
                 left.st.markdown("## 2. Your Image")
-                left.st.image(img, caption="Uploaded Image.", use_column_width=True)
+                left.image(img, caption="Uploaded Image.", use_column_width=True)
 
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
