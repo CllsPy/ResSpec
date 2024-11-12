@@ -24,9 +24,9 @@ with st.sidebar:
 # cols
 col1, col2, col3 = st.columns(3)
 
-with col1:
-        st.markdown("Upload an imagem")
-        img = st.file_uploader("File", type=["jpg", "png", "jpeg"])
+
+st.markdown("Upload an imagem")
+img = st.file_uploader("File", type=["jpg", "png", "jpeg"])
 
 
 if img is not None:
@@ -39,26 +39,17 @@ if img is not None:
         resnet.eval()
         out = resnet(batch_t)
 
-with open('imagenet_classes.txt') as f:
-        labels = [line.strip() for line in f.readlines()]
-        
+        with open('imagenet_classes.txt') as f:
+                labels = [line.strip() for line in f.readlines()]
+                
 
         percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
-        
-        _, indices = torch.sort(out, descending=True)
-        # [(labels[idx], percentage[idx].item()) for idx in indices[0][:5]]
-        
-        
-        # Sorting the output and getting the top 5 indices
         _, indices = torch.sort(out, descending=True)
         
-        # If indices is 2D, we need to flatten it or select the correct part
         indices = indices.squeeze()  # Remove any extra dimensions (e.g., if indices is 2D)
         
-        # Select only the top 5 indices (as 1D tensor)
         indices = indices[:5]
         
-        # Getting the top 5 labels and percentages
         top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
         top_percentages = [percentage[idx].item() for idx in indices]
         
