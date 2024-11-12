@@ -19,7 +19,7 @@ preprocess = transforms.Compose([
 
 # sidebar
 with st.sidebar:
-        st.markdown("Objective")
+        st.markdown("## Objective")
         st.markdown('''This app uses a pre-trained ResNet model to classify images. 
         Upload an image, and the model predicts the top 5 possible labels along with their confidence scores, 
         visualized in a bar chart.
