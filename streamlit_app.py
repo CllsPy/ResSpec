@@ -58,7 +58,7 @@ if img is not None:
         
         # Plotting with matplotlib
         fig, ax = plt.subplots()
-        ax.barh(top_labels, top_percentages, color='skyblue')
+        ax.barh(top_labels, top_percentages, color='red')
         ax.set_xlabel('Percentage')
         ax.set_title('Top 5 Predictions')
         
