@@ -20,7 +20,7 @@ preprocess = transforms.Compose([
 # sidebar
 with st.sidebar:
         st.markdown("Objective")
-        st.makdown('''This app uses a pre-trained ResNet model to classify images.  Upload an image, and the model predicts the top 5 possible labels along with their confidence scores, visualized in a bar chart.''')
+        st.makdown('This app uses a pre-trained ResNet model to classify images.  Upload an image, and the model predicts the top 5 possible labels along with their confidence scores, visualized in a bar chart.')
 
 # cols
 col1, col2, col3 = st.columns(3)
