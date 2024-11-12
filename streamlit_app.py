@@ -29,7 +29,9 @@ with st.container(height=300):
 
 if img is not None:
         img = Image.open(img)
-        st.image(img, caption="Uploaded Image.", use_column_width=True)
+
+        with st.container(height=300):
+                st.image(img, caption="Uploaded Image.", use_column_width=True)
         
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
