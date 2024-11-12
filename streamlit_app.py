@@ -32,7 +32,7 @@ with st.sidebar:
         
         ''')
         st.markdown("---")
-        st.markdown(f"made by {[CLL](https://github.com/CllsPy)"}
+        st.markdown(f'made by {[CLL](https://github.com/CllsPy)'}
 
 with st.container(height=580):
         st.markdown("## 1. Upload an imagem")
