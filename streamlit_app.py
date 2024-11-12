@@ -21,7 +21,8 @@ with st.sidebar:
         st.markdown("Title")
 
 
-img = st.file_uploader("Choose an image...", type=["jpg", "png", "jpeg"])
+st.markdown("Upload an imagem")
+img = st.file_uploader(type=["jpg", "png", "jpeg"])
 if img is not None:
         img = Image.open(img)
         st.image(img, caption="Uploaded Image.", use_column_width=True)
