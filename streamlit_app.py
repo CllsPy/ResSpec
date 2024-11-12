@@ -24,11 +24,8 @@ with st.sidebar:
 # cols
 col1, col2, col3 = st.columns(3)
 
-vertical_alignment = st.selectbox(
-    "Vertical alignment", ["top", "center", "bottom"], index=2
-)
 
-left, right = st.columns(2, vertical_alignment=vertical_alignment)
+left, right = st.columns(2)
 
 with st.container(height=300):
         st.markdown("## 1. Upload an imagem")
