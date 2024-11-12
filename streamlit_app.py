@@ -6,7 +6,6 @@ from torchvision import transforms
 import pandas as pd
 import matplotlib.pyplot as plt
 
-
 resnet = models.resnet101(pretrained=True)
 
 preprocess = transforms.Compose([
@@ -46,7 +45,14 @@ if img is not None:
 
         with st.container(height=500):
                 st.markdown("## 2. Your Image")
+                st.info('''Upload an Image:
+                                Please upload an image of an animal (in JPG, PNG, or JPEG format) 
+                                for classification.  The model will analyze the image and predict the most likely animal species.''')
+
+
+
                 st.image(img, caption=".", use_column_width=True)
+                
 
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
