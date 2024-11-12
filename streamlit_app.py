@@ -38,6 +38,9 @@ left, middle, right = st.columns(3, vertical_alignment="bottom")
 
 with st.container(height=300):
         st.markdown("## 1. Upload an imagem")
+        st.info('''Upload an Image:
+                                Please upload an image of an animal (in JPG, PNG, or JPEG format) 
+                                for classification.  The model will analyze the image and predict the most likely animal species.''')
         img = st.file_uploader("", type=["jpg", "png", "jpeg"])
 
 if img is not None:
@@ -45,9 +48,7 @@ if img is not None:
 
         with st.container(height=500):
                 st.markdown("## 2. Your Image")
-                st.info('''Upload an Image:
-                                Please upload an image of an animal (in JPG, PNG, or JPEG format) 
-                                for classification.  The model will analyze the image and predict the most likely animal species.''')
+
 
 
 
