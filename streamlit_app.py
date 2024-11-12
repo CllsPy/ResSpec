@@ -25,10 +25,9 @@ with st.sidebar:
 col1, col2, col3 = st.columns(3)
 left, middle, right = st.columns(3, vertical_alignment="bottom")
 
-with col1:
-        with st.container(height=300):
-                st.markdown("## 1. Upload an imagem")
-                img = st.file_uploader("", type=["jpg", "png", "jpeg"])
+with st.container(height=300):
+        st.markdown("## 1. Upload an imagem")
+        img = st.file_uploader("", type=["jpg", "png", "jpeg"])
 
 if img is not None:
         img = Image.open(img)
