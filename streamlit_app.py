@@ -24,19 +24,18 @@ with st.sidebar:
 # cols
 col1, col2, col3 = st.columns(3)
 
-with col1:
-        with st.container(height=300):
-                st.markdown("## 1. Upload an imagem")
-                img = st.file_uploader("", type=["jpg", "png", "jpeg"])
+with st.container(height=300):
+        st.markdown("## 1. Upload an imagem")
+        img = st.file_uploader("", type=["jpg", "png", "jpeg"])
 
 if img is not None:
         img = Image.open(img)
 
-        with col2:
-                with st.container(height=500):
-                        st.markdown("## 2. Your Image")
-                        st.image(img, caption="Uploaded Image.", use_column_width=True)
-        
+
+        with st.container(height=500):
+                st.markdown("## 2. Your Image")
+                st.image(img, caption="Uploaded Image.", use_column_width=True)
+
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
         
@@ -63,9 +62,8 @@ if img is not None:
         ax.set_xlabel('Percentage')
         ax.set_title('Top 5 Predictions')
         
-        # Display the plot in Streamlit
-        with col3:
-                with st.container(height=300):
-                        st.pyplot(fig)
+
+        with st.container(height=300):
+                st.pyplot(fig)
 
 
