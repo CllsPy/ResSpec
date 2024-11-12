@@ -64,6 +64,7 @@ if img is not None:
         
 
         with st.container(height=300):
+                plt.grid(True)
                 st.pyplot(fig)
 
 
