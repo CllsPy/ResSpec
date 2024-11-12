@@ -26,7 +26,7 @@ with st.sidebar:
         
         st.markdown("## Summary")
 
-         st.markdown(''' 
+        st.markdown(''' 
                 - Upload an imagem of an animal
                 - See your upload
                 - Get your label
