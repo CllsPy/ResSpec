@@ -1,4 +1,4 @@
-# Animal Image Classifier - README
+# Animal Image Classifier 
 
 ## Overview
 This application uses a pre-trained ResNet-101 model to classify animal images. Users can upload an image of an animal, and the model will predict the top 5 possible animal species along with their confidence scores. The results are displayed as a bar chart showing the predicted labels and their respective probabilities.
