@@ -26,15 +26,15 @@ col1, col2, col3 = st.columns(3)
 left, middle, right = st.columns(3, vertical_alignment="bottom")
 
 with st.container(height=300):
-        left.markdown("## 1. Upload an imagem")
-        img = left.file_uploader("", type=["jpg", "png", "jpeg"])
+        st.markdown("## 1. Upload an imagem")
+        img = st.file_uploader("", type=["jpg", "png", "jpeg"])
 
 if img is not None:
         img = Image.open(img)
 
         with st.container(height=500):
-                left.markdown("## 2. Your Image")
-                left.image(img, caption="Uploaded Image.", use_column_width=True)
+                st.markdown("## 2. Your Image")
+                st.image(img, caption="Uploaded Image.", use_column_width=True)
 
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
@@ -64,8 +64,8 @@ if img is not None:
         
 
         with st.container(height=300):
-                right.markdown("## 3. Label for your image")
+                st.markdown("## 3. Label for your image")
                 plt.grid(True)
-                right.pyplot(fig)
+                st.pyplot(fig)
 
 
