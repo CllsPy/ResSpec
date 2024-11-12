@@ -23,9 +23,7 @@ with st.sidebar:
 
 # cols
 col1, col2, col3 = st.columns(3)
-
-
-left, right = st.columns(2)
+left, middle, right = st.columns(3, vertical_alignment="bottom")
 
 with st.container(height=300):
         st.markdown("## 1. Upload an imagem")
@@ -35,8 +33,8 @@ if img is not None:
         img = Image.open(img)
 
         with st.container(height=500):
-                st.markdown("## 2. Your Image")
-                st.left(st.image(img, caption="Uploaded Image.", use_column_width=True))
+                left.st.markdown("## 2. Your Image")
+                left.st.image(img, caption="Uploaded Image.", use_column_width=True)
 
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
@@ -68,6 +66,6 @@ if img is not None:
         with st.container(height=300):
                 st.markdown("## 3. Label for your image")
                 plt.grid(True)
-                st.right(st.pyplot(fig))
+                st.pyplot(fig)
 
 
