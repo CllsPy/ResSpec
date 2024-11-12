@@ -17,32 +17,31 @@ preprocess = transforms.Compose([
             mean=[0.485, 0.456, 0.406],
             std=[0.229, 0.224, 0.225])])
 
+# sidebar
 with st.sidebar:
         st.markdown("Title")
 
+# cols
+col1, col2, col3 = st.columns(3)
 
-st.markdown("Upload an imagem")
-img = st.file_uploader("File", type=["jpg", "png", "jpeg"])
-if img is not None:
-        img = Image.open(img)
-        st.image(img, caption="Uploaded Image.", use_column_width=True)
-        
-        img_t = preprocess(img)
-        batch_t = torch.unsqueeze(img_t, 0)
-        
-        resnet.eval()
-        out = resnet(batch_t)
+with col1:
+        st.markdown("Upload an imagem")
+        img = st.file_uploader("File", type=["jpg", "png", "jpeg"])
+
+with col2:
+        if img is not None:
+                img = Image.open(img)
+                st.image(img, caption="Uploaded Image.", use_column_width=True)
+                
+                img_t = preprocess(img)
+                batch_t = torch.unsqueeze(img_t, 0)
+                
+                resnet.eval()
+                out = resnet(batch_t)
         
         with open('imagenet_classes.txt') as f:
                 labels = [line.strip() for line in f.readlines()]
         
-        #_, index = torch.max(out, 1)
-        
-        # percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
-        # answer = {labels[index[0]], percentage[index[0]].item()}
-        # dic = {'label': labels[index[0]], '%': percentage[index[0]].item()}
-        # data = pd.DataFrame(dic, index=[0])
-        # data
 
         percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
         
