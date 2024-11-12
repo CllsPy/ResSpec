@@ -25,7 +25,7 @@ with st.sidebar:
 col1, col2, col3 = st.columns(3)
 
 
-st.markdown("Upload an imagem")
+st.markdown("## 1. Upload an imagem")
 img = st.file_uploader("File", type=["jpg", "png", "jpeg"])
 
 
