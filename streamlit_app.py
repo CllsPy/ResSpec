@@ -34,7 +34,7 @@ if img is not None:
 
         with st.container(height=500):
                 st.markdown("## 2. Your Image")
-                st.image(img, caption="Uploaded Image.", use_column_width=True)
+                st.image(img, caption=".", use_column_width=True)
 
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
@@ -61,7 +61,6 @@ if img is not None:
         ax.barh(top_labels, top_percentages, color='red')
         ax.set_xlabel('Percentage')
         ax.set_title('Top 5 Predictions')
-        
 
         with st.container(height=300):
                 st.markdown("## 3. Label for your image")
