@@ -86,7 +86,8 @@ with st.form('Image Classifier'):
         # st.pyplot(fig)
         #df = df['Probability'].max(axis=0)
         #df
-        df.loc[df['Probability'].idxmax()]
+        df = df.loc[df['Probability'].idxmax()]
+        plt.plot(df)
                           
 
 
