@@ -84,6 +84,6 @@ with st.form('Image Classifier'):
         # plt.grid(True)
         # st.pyplot(fig)
 
-        st.bar_chart(top_labels, top_percentages)
+        st.bar_chart(x=top_labels, y=top_percentages)
 
 
