@@ -33,7 +33,7 @@ with st.sidebar:
                 Upload an image, and the model predicts the top 5 possible labels a
                 long with their confidence scores, visualized in a bar chart. 
                 """)
-        
+
         st.markdown("## Summary")
 
         st.markdown(''' 
@@ -43,7 +43,8 @@ with st.sidebar:
         
         ''')
         st.markdown("---")
-        
+
+        st.radio('Show Species I can classify?', ['Yes', 'No'])
         st.markdown(f' made by [CLL](https://github.com/CllsPy)')
 
 with st.form('Image Classifier'):
