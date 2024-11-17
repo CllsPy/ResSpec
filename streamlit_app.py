@@ -6,12 +6,6 @@ from torchvision import transforms
 import pandas as pd
 import matplotlib.pyplot as plt
 
-font = {'family' : 'normal',
-        'weight' : 'bold',
-        'size'   : 22}
-
-matplotlib.rc('font', **font)
-
 icon = Image.open('cat.png')
 
 st.set_page_config(
@@ -92,11 +86,10 @@ with st.form('Image Classifier'):
                 top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
                 top_percentages = ([percentage[idx].item() for idx in indices])
         
-                #df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
-                #st.bar_chart(df, x="Probability", y="Labels", stack=False)
-                # Plotting with matplotlib
+        
                 
                 plt.figure(figsize=(8,12))
+                plt.rc('font', size=22)
                 fig, ax = plt.subplots()
                 ax.barh(top_labels, [round(x) for x in top_percentages])
                 ax.set_xlabel('Percentage')
