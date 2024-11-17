@@ -84,7 +84,7 @@ with st.form('Image Classifier'):
         # st.markdown("## 3. Label for your image")
         # plt.grid(True)
         # st.pyplot(fig)
-        st.sucess(df.max())
+        st.info(df.max())
                           
 
 
