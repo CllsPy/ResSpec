@@ -91,6 +91,6 @@ with st.form('Image Classifier'):
         #st.progress(df['Probability'])
 
 
-with st.column:
+st.column:
                 st.pyplot(fig)
 
