@@ -77,7 +77,7 @@ with st.form('Image Classifier'):
         
                 with open('imagenet_classes.txt') as f:
                         labels = [line.strip() for line in f.readlines()]
-                        labels = labels[1]
+                        st.write(labels[1])
                         
         
                 percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
