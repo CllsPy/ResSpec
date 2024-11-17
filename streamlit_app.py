@@ -73,12 +73,12 @@ with st.form('Image Classifier'):
         top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
         top_percentages = ([percentage[idx].item() for idx in indices])
 
-        df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
+        #df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
         #st.bar_chart(df, x="Probability", y="Labels", stack=False)
         # Plotting with matplotlib
         
         fig, ax = plt.subplots()
-        ax.barh(df)
+        ax.barh(top_labels, round(top_percentages, 2))
         ax.set_xlabel('Percentage')
         ax.set_title('Top 3 Predictions')
 
