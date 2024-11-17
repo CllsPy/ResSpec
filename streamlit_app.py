@@ -76,17 +76,13 @@ with st.form('Image Classifier'):
                 out = resnet(batch_t)
         
                 with open('imagenet_classes.txt') as f:
-                        labels = [line.strip() for line in f.readlines()]
-                        st.write(labels[1])
-                        
+                        labels = [line.strip() for line in f.readlines()]                        
         
                 percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
                 _, indices = torch.sort(out, descending=True)
                 
                 indices = indices.squeeze()  # Remove any extra dimensions (e.g., if indices is 2D)
-                
-                indices = indices[:3]
-                
+                indices = indices[:2]
                 top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
                 top_percentages = ([percentage[idx].item() for idx in indices])
         
@@ -94,6 +90,7 @@ with st.form('Image Classifier'):
                 #st.bar_chart(df, x="Probability", y="Labels", stack=False)
                 # Plotting with matplotlib
                 
+                plt.figure(figsize=(8,12))
                 fig, ax = plt.subplots()
                 ax.barh(top_labels, [round(x) for x in top_percentages])
                 ax.set_xlabel('Percentage')
