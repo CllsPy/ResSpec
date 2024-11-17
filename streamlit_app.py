@@ -49,7 +49,7 @@ with st.sidebar:
         radio = st.checkbox('Which Species I can classify?')
 
         if radio:
-                st.markdown([Classes](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/))
+                st.markdown('[Classes](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/)')
                 
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
