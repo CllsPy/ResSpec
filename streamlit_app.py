@@ -84,7 +84,7 @@ with st.form('Image Classifier'):
 
         # st.markdown("## 3. Label for your image")
         # plt.grid(True)
-        st.pyplot(df)
+        st.pyplot(fig)
         #df = df['Probability'].max(axis=0)
         #df
         #df = df.loc[df['Probability'].idxmax()]
