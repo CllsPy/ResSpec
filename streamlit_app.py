@@ -97,7 +97,7 @@ with st.form('Image Classifier'):
                 st.markdown("## 3. Label for your image")
                 plt.grid(True)
                 st.pyplot(fig)
-                st.sucess(top_labels[0])
+                st.success(top_labels[0])
 
         except Exception as inst:
                 st.info("Oops!  That was no valid **IMAGE**.  Try again...")
