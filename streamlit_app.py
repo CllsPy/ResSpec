@@ -46,6 +46,13 @@ with st.sidebar:
 
         st.markdown(f' made by [CLL](https://github.com/CllsPy)')
 
+        radio = st.checkbox('Show Species I can classify?')
+        
+        if radio:
+                file = open("imagenet_classes.txt", "r")
+                content = file.read()
+                st.write(content)
+
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
         st.info(
@@ -104,9 +111,5 @@ with st.form('Image Classifier'):
         except Exception as inst:
                 st.info("Oops!  That was no valid **IMAGE**.  Try again...")
 
-radio = st.sidebar.checkbox('Show Species I can classify?')
-if radio:
-        file = open("imagenet_classes.txt", "r")
-        content = file.read()
-        st.write(content)
+
 
