@@ -49,20 +49,10 @@ with st.form('Image Classifier'):
                 st.error('Input an image')
                 st.stop()
 
-
-       
-if img is not None:
         img = Image.open(img)
-
-        with st.container(height=500):
-                st.markdown("## 2. Your Image")
-
-
-
-
-                st.image(img, caption=".", use_column_width=True)
+        st.markdown("## 2. Your Image")
+        st.image(img, caption=".", use_column_width=True)
                 
-
         img_t = preprocess(img)
         batch_t = torch.unsqueeze(img_t, 0)
         
