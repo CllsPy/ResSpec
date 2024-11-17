@@ -97,7 +97,9 @@ with st.form('Image Classifier'):
                 st.markdown("## 3. Label for your image")
                 plt.grid(True)
                 st.pyplot(fig)
-                st.success(f'Specie: {top_labels[0]}, Accuracy{round(top_percentages[0])}')
+                st.success(f'Specie: {top_labels[0]})
+                st.success(f'Probability: {top_percentages[0]})
+
 
         except Exception as inst:
                 st.info("Oops!  That was no valid **IMAGE**.  Try again...")
