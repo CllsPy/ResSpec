@@ -49,7 +49,7 @@ with st.sidebar:
         radio = st.checkbox('Which Species I can classify?')
 
         if radio:
-                st.markdown([Image Classification on ImageNet]('https://paperswithcode.com/sota/image-classification-on-imagenet'))
+                st.markdown([Image]("https://paperswithcode.com/sota/image-classification-on-imagenet"))
                 
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
