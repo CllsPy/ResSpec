@@ -71,17 +71,17 @@ with st.form('Image Classifier'):
         indices = indices[:3]
         
         top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
-        top_percentages = [percentage[idx].item() for idx in indices]
+        top_percentages = sorted([percentage[idx].item() for idx in indices])
         
         # Plotting with matplotlib
         fig, ax = plt.subplots()
-        ax.barh(top_labels, top_percentages, color='black', ascending=False)
+        
+        ax.barh(top_labels, top_percentages, color='gray',)
         ax.set_xlabel('Percentage')
         ax.set_title('Top 3 Predictions')
 
-        with st.container(height=500):
-                st.markdown("## 3. Label for your image")
-                plt.grid(True)
-                st.pyplot(fig)
+        st.markdown("## 3. Label for your image")
+        plt.grid(True)
+        st.pyplot(fig)
 
 
