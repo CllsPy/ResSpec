@@ -6,6 +6,15 @@ from torchvision import transforms
 import pandas as pd
 import matplotlib.pyplot as plt
 
+icon = Image.open('')
+
+st.set_page_config(
+        page_title='Animal Image Classifier',
+        page_icon=icon,
+        layout='centered',
+        initial_sidebar_state='expanded'
+)
+
 resnet = models.resnet101(pretrained=True)
 
 preprocess = transforms.Compose([
