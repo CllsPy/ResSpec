@@ -6,7 +6,7 @@ from torchvision import transforms
 import pandas as pd
 import matplotlib.pyplot as plt
 
-icon = Image.open('')
+icon = Image.open('cat.png')
 
 st.set_page_config(
         page_title='Animal Image Classifier',
