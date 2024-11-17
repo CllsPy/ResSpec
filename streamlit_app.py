@@ -109,4 +109,4 @@ if radio:
         file = open("imagenet_classes.txt", "r")
         content = file.read()
         st.write(content)
-        file.close()
+
