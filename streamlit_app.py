@@ -33,7 +33,8 @@ with st.sidebar:
                 Upload an image, and the model predicts the top 5 possible labels a
                 long with their confidence scores, visualized in a bar chart. 
                 """)
-
+        
+        radio = st.checkbox('Which Species I can classify?')
         st.markdown("## Summary")
 
         st.markdown(''' 
@@ -46,7 +47,7 @@ with st.sidebar:
 
         
 
-        radio = st.checkbox('Which Species I can classify?')
+
         
 
         if radio:
