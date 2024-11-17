@@ -43,12 +43,12 @@ with st.form('Image Classifier'):
                 The model will analyze the image and predict the most likely animal species.'""")
         
         img = st.file_uploader("", type=["jpg", "png", "jpeg"])
-        
+        st.form_submit_button('Submit Image')
+
         if not img:
                 st.error('Input an image')
                 st.stop()
 
-st.form_submit_button('Submit Image')
 
        
 if img is not None:
