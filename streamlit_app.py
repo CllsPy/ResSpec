@@ -74,17 +74,17 @@ with st.form('Image Classifier'):
         top_percentages = ([percentage[idx].item() for idx in indices])
 
         df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
-        st.bar_chart(df, x="Probability", y="Labels", stack=False)
+        #st.bar_chart(df, x="Probability", y="Labels", stack=False)
         # Plotting with matplotlib
         # fig, ax = plt.subplots()
         
-        # ax.barh(top_labels, top_percentages, color='gray',)
-        # ax.set_xlabel('Percentage')
-        # ax.set_title('Top 3 Predictions')
+        ax.barh(df)
+        ax.set_xlabel('Percentage')
+        ax.set_title('Top 3 Predictions')
 
         # st.markdown("## 3. Label for your image")
         # plt.grid(True)
-        #st.pyplot(df)
+        st.pyplot(df)
         #df = df['Probability'].max(axis=0)
         #df
         #df = df.loc[df['Probability'].idxmax()]
