@@ -74,9 +74,8 @@ with st.form('Image Classifier'):
         top_percentages = [percentage[idx].item() for idx in indices]
         
         # Plotting with matplotlib
-        plt.figsize(12, 5)
         fig, ax = plt.subplots()
-        ax.barh(top_labels, top_percentages, color='red')
+        ax.bar(top_labels, top_percentages, color='red')
         ax.set_xlabel('Percentage')
         ax.set_title('Top 3 Predictions')
 
