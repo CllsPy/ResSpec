@@ -35,6 +35,10 @@ with st.sidebar:
                 """)
         
         radio = st.checkbox('Which Species I can classify?')
+
+        if radio:
+                st.markdown('[Classes](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/)')
+
         st.markdown("## Summary")
 
         st.markdown(''' 
@@ -50,8 +54,6 @@ with st.sidebar:
 
         
 
-        if radio:
-                st.markdown('[Classes](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/)')
 
         st.markdown(f' made by [CLL](https://github.com/CllsPy)')
 with st.form('Image Classifier'):
