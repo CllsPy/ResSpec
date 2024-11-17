@@ -50,8 +50,9 @@ with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
         st.info(
                 """Please upload an image of an animal 
-                (in JPG, PNG, or JPEG format)  for classification.  
-                The model will analyze the image and predict the most likely animal species.'""")
+                        (in JPG, PNG, or JPEG format)  for classification.  
+                        The model will analyze the image and predict the most likely animal species.
+                """)
         
         img = st.file_uploader("", type=["jpg", "png", "jpeg"])
         st.form_submit_button('Submit Image')
