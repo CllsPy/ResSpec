@@ -97,7 +97,6 @@ with st.form('Image Classifier'):
                 st.markdown("## 3. Label for your image")
                 plt.grid(True)
                 st.pyplot(fig)
-                answer = zip(top_labels, top_percentages)
                 st.info(top_labels, [round(x) for x in top_percentages])
 
         except Exception as inst:
