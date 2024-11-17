@@ -85,6 +85,7 @@ with st.form('Image Classifier'):
         # plt.grid(True)
         # st.pyplot(fig)
         df = df['Probability'].max()
+        df
                           
 
 
