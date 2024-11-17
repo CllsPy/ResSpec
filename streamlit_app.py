@@ -35,7 +35,7 @@ with st.sidebar:
         
         st.markdown(f' made by [CLL](https://github.com/CllsPy)')
 
-with st.container(height=580):
+with st.form('Image Classifier')
         st.markdown("## 1. Upload an imagem")
         st.info('''
                                 Please upload an image of an animal (in JPG, PNG, or JPEG format) 
