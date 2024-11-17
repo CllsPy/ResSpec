@@ -49,8 +49,10 @@ with st.sidebar:
         radio = st.checkbox('Show Species I can classify?')
         
         if radio:
-                file = pd.read_csv('imagenet_classes.txt', sep=" ")
-                st.write(file[:10])
+                file = open("imagenet_classes.txt", "r")
+                content = file.read()
+                st.write(content[:5])
+                file.close()
 
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
