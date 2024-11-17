@@ -74,6 +74,7 @@ with st.form('Image Classifier'):
         top_percentages = ([percentage[idx].item() for idx in indices])
 
         df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
+        df
         # Plotting with matplotlib
         # fig, ax = plt.subplots()
         
@@ -83,7 +84,7 @@ with st.form('Image Classifier'):
 
         # st.markdown("## 3. Label for your image")
         # plt.grid(True)
-        st.pyplot(df)
+        #st.pyplot(df)
         #df = df['Probability'].max(axis=0)
         #df
         #df = df.loc[df['Probability'].idxmax()]
