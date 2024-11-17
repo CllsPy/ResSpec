@@ -87,7 +87,7 @@ with st.form('Image Classifier'):
         #df = df['Probability'].max(axis=0)
         #df
         #df = df.loc[df['Probability'].idxmax()]
-        st.progress(df['Probability])
+        st.progress(df['Probability'])
                           
 
 
