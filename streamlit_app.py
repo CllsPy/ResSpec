@@ -52,8 +52,7 @@ with st.sidebar:
                 file = open("imagenet_classes.txt", "r")
                 content = file.read()
                 st.write(content[:5])
-                file.close()
-
+                
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
         st.info(
