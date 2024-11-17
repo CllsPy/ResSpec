@@ -74,7 +74,7 @@ with st.form('Image Classifier'):
         top_percentages = ([percentage[idx].item() for idx in indices])
 
         df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
-        df
+        st.bar_chart(df)
         # Plotting with matplotlib
         # fig, ax = plt.subplots()
         
