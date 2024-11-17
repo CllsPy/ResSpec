@@ -49,9 +49,7 @@ with st.sidebar:
         radio = st.checkbox('Show Species I can classify?')
         
         if radio:
-                file = open("imagenet_classes.txt", "r")
-                content = file.read()
-                content[:10]
+                st.markdown([Image Classification on ImageNet]('https://paperswithcode.com/sota/image-classification-on-imagenet')
                 
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
