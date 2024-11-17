@@ -92,7 +92,7 @@ with st.form('Image Classifier'):
                 ax.set_xlabel('Percentage')
                 ax.set_title('Top 3 Predictions')
 
-        except ValueError:
+        except Exception as inst:
                 print("Oops!  That was no valid number.  Try again...")
 
 st.markdown("## 3. Label for your image")
