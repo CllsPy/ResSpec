@@ -37,7 +37,7 @@ with st.sidebar:
         radio = st.checkbox('Which Species I can classify?')
 
         if radio:
-                st.markdown('[Classes](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/)')
+                st.markdown('[IMAGENET 1000 Class List](https://deeplearning.cms.waikato.ac.nz/user-guide/class-maps/IMAGENET/)')
 
         st.markdown("## Summary")
 
