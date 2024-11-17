@@ -71,7 +71,7 @@ with st.form('Image Classifier'):
         indices = indices[:3]
         
         top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
-        top_percentages = sorted([percentage[idx].item() for idx in indices])
+        top_percentages = ([percentage[idx].item() for idx in indices])
         
         # Plotting with matplotlib
         fig, ax = plt.subplots()
