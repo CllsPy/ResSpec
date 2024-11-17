@@ -57,48 +57,43 @@ with st.form('Image Classifier'):
         if not (img):
                 st.error('Input an valid image')
                 st.stop()
+        try:        
+                st.info(type(img))
+                img = Image.open(img)
+                st.markdown("## 2. Your Image")
+                st.image(img, caption=".", use_column_width=True)
+                        
+                img_t = preprocess(img)
+                batch_t = torch.unsqueeze(img_t, 0)
                 
-        st.info(type(img))
-        img = Image.open(img)
-        st.markdown("## 2. Your Image")
-        st.image(img, caption=".", use_column_width=True)
+                resnet.eval()
+                out = resnet(batch_t)
+        
+                with open('imagenet_classes.txt') as f:
+                        labels = [line.strip() for line in f.readlines()]
+                        
+        
+                percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
+                _, indices = torch.sort(out, descending=True)
                 
-        img_t = preprocess(img)
-        batch_t = torch.unsqueeze(img_t, 0)
-        
-        resnet.eval()
-        out = resnet(batch_t)
-
-        with open('imagenet_classes.txt') as f:
-                labels = [line.strip() for line in f.readlines()]
+                indices = indices.squeeze()  # Remove any extra dimensions (e.g., if indices is 2D)
                 
+                indices = indices[:3]
+                
+                top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
+                top_percentages = ([percentage[idx].item() for idx in indices])
+        
+                #df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
+                #st.bar_chart(df, x="Probability", y="Labels", stack=False)
+                # Plotting with matplotlib
+                
+                fig, ax = plt.subplots()
+                ax.barh(top_labels, [round(x) for x in top_percentages])
+                ax.set_xlabel('Percentage')
+                ax.set_title('Top 3 Predictions')
 
-        percentage = torch.nn.functional.softmax(out, dim=1)[0] * 100
-        _, indices = torch.sort(out, descending=True)
-        
-        indices = indices.squeeze()  # Remove any extra dimensions (e.g., if indices is 2D)
-        
-        indices = indices[:3]
-        
-        top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
-        top_percentages = ([percentage[idx].item() for idx in indices])
-
-        #df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
-        #st.bar_chart(df, x="Probability", y="Labels", stack=False)
-        # Plotting with matplotlib
-        
-        fig, ax = plt.subplots()
-        ax.barh(top_labels, [round(x) for x in top_percentages])
-        ax.set_xlabel('Percentage')
-        ax.set_title('Top 3 Predictions')
-
-        # st.markdown("## 3. Label for your image")
-        # plt.grid(True)
-        # st.pyplot(fig)
-        #df = df['Probability'].max(axis=0)
-        #df
-        #df = df.loc[df['Probability'].idxmax()]
-        #st.progress(df['Probability'])
+        except ValueError:
+                print("Oops!  That was no valid number.  Try again...")
 
 st.markdown("## 3. Label for your image")
 plt.grid(True)
