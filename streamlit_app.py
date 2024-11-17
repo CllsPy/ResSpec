@@ -97,5 +97,5 @@ with st.form('Image Classifier'):
                 st.pyplot(fig)
 
         except Exception as inst:
-                print("Oops!  That was no valid number.  Try again...")
+                st.write("Oops!  That was no valid number.  Try again...")
 
