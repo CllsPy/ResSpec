@@ -90,8 +90,6 @@ with st.form('Image Classifier'):
         #df = df.loc[df['Probability'].idxmax()]
         #st.progress(df['Probability'])
 
-
-
-col1, col2 = st.columns(2)
-with col2:
-        st.pyplot(fig)
+st.markdown("## 3. Label for your image")
+plt.grid(True)
+st.pyplot(fig)
