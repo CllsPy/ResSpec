@@ -92,9 +92,10 @@ with st.form('Image Classifier'):
                 ax.set_xlabel('Percentage')
                 ax.set_title('Top 3 Predictions')
 
+                st.markdown("## 3. Label for your image")
+                plt.grid(True)
+                st.pyplot(fig)
+
         except Exception as inst:
                 print("Oops!  That was no valid number.  Try again...")
 
-st.markdown("## 3. Label for your image")
-plt.grid(True)
-st.pyplot(fig)
