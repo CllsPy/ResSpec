@@ -54,8 +54,8 @@ with st.form('Image Classifier'):
         img = st.file_uploader("", type=["jpg", "png", "jpeg"])
         st.form_submit_button('Submit Image')
 
-        if not img:
-                st.error('Input an image')
+        if not (img) or type(imge) =! 'jpg' and 'png', and 'jpeg':
+                st.error('Input an valid image')
                 st.stop()
 
         img = Image.open(img)
