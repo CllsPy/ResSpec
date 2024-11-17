@@ -44,7 +44,7 @@ with st.form('Image Classifier'):
         
         img = st.file_uploader("", type=["jpg", "png", "jpeg"])
         
-         if not img:
+        if not img:
                 st.error('No name entered')
                 st.stop()
 
