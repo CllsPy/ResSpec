@@ -75,7 +75,7 @@ with st.form('Image Classifier'):
         
         # Plotting with matplotlib
         fig, ax = plt.subplots()
-        ax.barh(top_labels, top_percentages, color='black')
+        ax.barh(top_labels, top_percentages, color='black', ascending=False)
         ax.set_xlabel('Percentage')
         ax.set_title('Top 3 Predictions')
 
