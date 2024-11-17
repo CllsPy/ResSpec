@@ -50,7 +50,7 @@ with st.sidebar:
         
         if radio:
                 file = pd.read_csv('imagenet_classes.txt'
-                st.write(file)
+                st.write(file[:10])
 
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
