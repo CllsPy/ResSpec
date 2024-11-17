@@ -76,8 +76,8 @@ with st.form('Image Classifier'):
         df = pd.DataFrame({'Labels':top_labels, 'Probability':top_percentages})
         #st.bar_chart(df, x="Probability", y="Labels", stack=False)
         # Plotting with matplotlib
-        # fig, ax = plt.subplots()
         
+        fig, ax = plt.subplots()
         ax.barh(df)
         ax.set_xlabel('Percentage')
         ax.set_title('Top 3 Predictions')
