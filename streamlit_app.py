@@ -57,8 +57,8 @@ with st.form('Image Classifier'):
         if not (img):
                 st.error('Input an valid image')
                 st.stop()
+                
         try:        
-                st.info(type(img))
                 img = Image.open(img)
                 st.markdown("## 2. Your Image")
                 st.image(img, caption=".", use_column_width=True)
@@ -97,5 +97,5 @@ with st.form('Image Classifier'):
                 st.pyplot(fig)
 
         except Exception as inst:
-                st.write("Oops!  That was no valid number.  Try again...")
+                st.info("Oops!  That was no valid number.  Try again...")
 
