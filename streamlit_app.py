@@ -98,7 +98,7 @@ with st.form('Image Classifier'):
                 plt.grid(True)
                 st.pyplot(fig)
                 answer = zip(top_labels, top_percentages)
-                st.info(answer)
+                answer
 
         except Exception as inst:
                 st.info("Oops!  That was no valid **IMAGE**.  Try again...")
