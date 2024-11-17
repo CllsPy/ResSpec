@@ -6,6 +6,12 @@ from torchvision import transforms
 import pandas as pd
 import matplotlib.pyplot as plt
 
+font = {'family' : 'normal',
+        'weight' : 'bold',
+        'size'   : 22}
+
+matplotlib.rc('font', **font)
+
 icon = Image.open('cat.png')
 
 st.set_page_config(
