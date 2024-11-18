@@ -52,7 +52,7 @@ with st.sidebar:
         
 with st.form('Image Classifier'):
         st.markdown("## 1. Upload an imagem")
-        st.info(
+        st.write(
                 """Please upload an image of an animal 
                         (in JPG, PNG, or JPEG format)  for classification.  The model will analyze the image and predict the most likely animal species.
                 """)
@@ -86,8 +86,6 @@ with st.form('Image Classifier'):
                 top_labels = [labels[idx.item()] for idx in indices]  # Use idx.item() to convert tensor to integer
                 top_percentages = ([percentage[idx].item() for idx in indices])
         
-        
-                
                 plt.figure(figsize=(8,12))
                 plt.rc('font', size=22)
                 fig, ax = plt.subplots()
