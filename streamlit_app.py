@@ -98,9 +98,9 @@ with st.form('Image Classifier'):
                         plt.grid(True)
                         st.pyplot(fig)
 
-                
-                st.write(f'Specie: {top_labels[0]}')
-                st.write(f'Probability: {round(top_percentages[0], 2)}%')
+                with st.expander("Show Predicted Specie"):
+                        st.write(f'Specie: {top_labels[0]}')
+                        st.write(f'Probability: {round(top_percentages[0], 2)}%')
 
 
         except Exception as inst:
