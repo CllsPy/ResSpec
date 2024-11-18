@@ -93,9 +93,12 @@ with st.form('Image Classifier'):
                 ax.set_xlabel('Percentage')
                 ax.set_title('Top 3 Predictions')
 
-                st.markdown("## 3. Label for your image")
-                plt.grid(True)
-                st.pyplot(fig)
+                with st.expander("Show Plot"):
+                        st.markdown("## 3. Label for your image")
+                        plt.grid(True)
+                        st.pyplot(fig)
+
+                
                 st.success(f'Specie: {top_labels[0]}')
                 st.success(f'Probability: {round(top_percentages[0], 2)}%')
 
