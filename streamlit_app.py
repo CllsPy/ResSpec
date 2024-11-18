@@ -7,6 +7,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 icon = Image.open('cat.png')
+col1, col2 = st.columns(2)
 
 st.set_page_config(
         page_title='Animal Image Classifier',
@@ -57,7 +58,10 @@ with st.form('Image Classifier'):
                         (in JPG, PNG, or JPEG format)  for classification.  The model will analyze the image and predict the most likely animal species.
                 """)
         
-        img = st.file_uploader("", type=["jpg", "png", "jpeg"])
+        with col1:
+                img = st.file_uploader("", type=["jpg", "png", "jpeg"])
+                
+        with col2:
         st.form_submit_button('Submit Image')
 
         if not (img):
