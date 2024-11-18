@@ -58,9 +58,9 @@ with st.form('Image Classifier'):
                         (in JPG, PNG, or JPEG format)  for classification.  The model will analyze the image and predict the most likely animal species.
                 """)
         
-        with col1:
-                img = st.file_uploader("", type=["jpg", "png", "jpeg"])
-                st.form_submit_button('Submit Image')
+
+        col1.img = st.file_uploader("", type=["jpg", "png", "jpeg"])
+        col2.st.form_submit_button('Submit Image')
 
         if not (img):
                 st.error('Input an valid image')
