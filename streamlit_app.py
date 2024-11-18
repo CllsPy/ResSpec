@@ -60,8 +60,6 @@ with st.form('Image Classifier'):
         
         with col1:
                 img = st.file_uploader("", type=["jpg", "png", "jpeg"])
-                
-        with col2:
                 st.form_submit_button('Submit Image')
 
         if not (img):
