@@ -99,8 +99,8 @@ with st.form('Image Classifier'):
                         st.pyplot(fig)
 
                 
-                st.success(f'Specie: {top_labels[0]}')
-                st.success(f'Probability: {round(top_percentages[0], 2)}%')
+                st.write(f'Specie: {top_labels[0]}')
+                st.write(f'Probability: {round(top_percentages[0], 2)}%')
 
 
         except Exception as inst:
