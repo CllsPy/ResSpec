@@ -7,7 +7,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 icon = Image.open('cat.png')
-col1, col2 = st.columns(2)
 
 st.set_page_config(
         page_title='Animal Image Classifier',
